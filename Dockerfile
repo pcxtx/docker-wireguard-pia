@@ -32,7 +32,7 @@ COPY ./RegionsListPubKey.pem /RegionsListPubKey.pem
 WORKDIR /scripts
 
 # Copy scripts to containers
-COPY run pf_success.sh ./extra/pf.sh ./extra/pia-auth.sh ./extra/wg-gen.sh /scripts/
+COPY run pf_success.sh ./extra/pf.sh ./extra/pia-auth.sh ./extra/wg-gen.sh ./extra/trport.sh /scripts/
 RUN chmod 755 /scripts/*
 
 # Store persistent PIA stuff here (auth token, server list)
