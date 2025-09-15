@@ -14,6 +14,8 @@ RUN apk add --no-cache \
     tini \
     wireguard-go \
     wireguard-tools
+    inotify-tools \
+    transmission-remote
 
 # Modify wg-quick so it doesn't die without --privileged
 # Set net.ipv4.conf.all.src_valid_mark=1 on container creation using --sysctl if required instead
@@ -28,7 +30,7 @@ COPY ./RegionsListPubKey.pem /RegionsListPubKey.pem
 
 WORKDIR /scripts
 
-COPY run healthcheck.sh pf_success.sh ./extra/pf.sh ./extra/pia-auth.sh ./extra/wg-gen.sh /scripts/
+COPY run healthcheck.sh pf_success.sh ./extra/pf.sh ./extra/pia-auth.sh ./extra/wg-gen.sh ./extra/trport.sh /scripts/
 RUN chmod 755 /scripts/*
 
 # Store persistent PIA stuff here (auth token, server list)
