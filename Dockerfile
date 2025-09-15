@@ -13,7 +13,7 @@ RUN apk add --no-cache \
     sed \
     tini \
     wireguard-go \
-    wireguard-tools
+    wireguard-tools \
     inotify-tools \
     transmission-remote
 
