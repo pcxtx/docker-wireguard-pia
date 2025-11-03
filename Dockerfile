@@ -14,7 +14,6 @@ RUN apk add --no-cache \
     tini \
     wireguard-go \
     wireguard-tools \
-    inotify-tools \
     transmission-remote
 
 # Modify wg-quick so it doesn't die without --privileged
