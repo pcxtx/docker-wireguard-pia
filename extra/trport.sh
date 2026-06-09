@@ -13,7 +13,7 @@ until pidof transmission-daemon > /dev/null; do
 done
 echo "Transmission is running."
 
-until /usr/bin/curl -s http://localhost:9091/transmission/rpc | /bin/grep -q 'session-id'; do
+until /usr/bin/curl -s http://localhost:9091/transmission/rpc | /bin/grep -qi 'session-id'; do
     echo "$(date) Waiting for Transmission RPC..."
     sleep 5
 done
