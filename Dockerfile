@@ -14,7 +14,8 @@ RUN apk add --no-cache \
     sed \
     tini \
     wireguard-go \
-    wireguard-tools
+    wireguard-tools \
+	transmission-remote
 
 # wg-quick patches:
 # - don't fail attempting to modify src_valid_mark without --privileged
